@@ -43,4 +43,11 @@ class Parcel
     @@parcels.delete(self.id)
   end
 
+  def volume()
+    @length*@width*@height
+  end
+
+  def cost_to_ship()
+    cost = 
+
 end

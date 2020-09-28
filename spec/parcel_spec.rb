@@ -33,10 +33,14 @@ describe '#Parcel' do
 
   describe('#update') do
     it("updates a parcel by id") do
-      album = Album.new("parcel_three", nil)
-      album.save()
-      album.update("parcel_five")
-      expect(album.name).to(eq("parcel_five"))
+      parcel = Album.new("parcel_three", nil)
+      parcel.save()
+      parcel.update("parcel_five")
+      expect(parcel.name).to(eq("parcel_five"))
     end
   end
+
+  describe('#volume') do
+    it("Returns volume of parcel") do
+      parcel = Parcel.new(5,5,5,0)
 end
