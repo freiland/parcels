@@ -21,8 +21,26 @@ class Parcel
     @@parcels[self.id] = Parcel.new(self.name, self.width, self.height, self.length, self.weight, self.id)
   end
 
+  def ==(parcel_to_compare)
+    (self.name() == parcel_to_compare.name()) && (self.width == parcel_to_compare.width) && (self.height == parcel_to_compare.height) && (self.length == parcel_to_compare.length) && (self.weight == parcel_to_compare.weight) && (self.id == parcel_to_compare.id)
+  end
+
   def self.clear
     @@parcels = {}
     @@total_rows = 0
   end
+
+  def self.find(id)
+    @@parcels[id]
+  end
+
+  def update(name)
+    self.name = name
+    @@parcels[self.id] = Parcel.new(self.name, self.width, self.height, self.length, self.weight, self.id)
+  end
+
+  def delete()
+    @@parcels.delete(self.id)
+  end
+
 end

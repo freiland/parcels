@@ -1,0 +1,29 @@
+
+<div class="container">
+  <h3>Parcels that you have shipped!</h3>
+
+<% if @parcels.any? %>
+  <ul>
+  <% @parcels.each do |package| %>
+    <li><a href="/parcels/<%= package.id %>"><%= package.name %></a></li>
+  <% end %>
+
+    </ul>
+  <% else %>
+    <p> There are currently no shipped packages in our inventory! </p>
+<% end %>
+
+  <form action="/parcels">
+  <div class="form-group">
+    <label for="search"><Search</label>
+    <input id="search" name="search"
+    class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn">Go!</button>
+  </form>
+
+  <a href="/parcels/new">Add a new parcel</a>
+</div>
+
+  
+  
